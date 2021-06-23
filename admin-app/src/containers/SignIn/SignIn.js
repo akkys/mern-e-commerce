@@ -28,7 +28,7 @@ const SignIn = () => {
     <Layout>
       <Container style={{ paddingTop: "60px" }}>
         <Row className="mt-5">
-          <Col md={{ span: 6, offset: 3 }}>
+          <Col md={{ span: 4, offset: 4 }}>
             <Form onSubmit={userLogin}>
               <InputField
                 inputType="input"
@@ -47,7 +47,7 @@ const SignIn = () => {
                 placeholder="Password"
               />
 
-              <Button variant="primary" type="submit">
+              <Button variant="primary" className="shadow-none" type="submit">
                 Submit
               </Button>
             </Form>

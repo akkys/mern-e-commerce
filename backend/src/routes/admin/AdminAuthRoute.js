@@ -4,12 +4,12 @@ const {
   signin,
   signout,
 } = require("../../controllers/admin/AdminAuthController");
+const { Auth } = require("../../middleware/AuthMiddleware");
 const {
   validateSignUpRequest,
   isRequestValidated,
   validateSignInRequest,
 } = require("../../validator/Auth");
-const { Auth } = require("../../controllers/middleware/AuthMiddleware");
 
 router.post("/admin/signin", validateSignInRequest, isRequestValidated, signin);
 

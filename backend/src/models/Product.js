@@ -13,6 +13,10 @@ const productSchema = new Schema(
       required: true,
       unique: true,
     },
+    brand: {
+      type: String,
+      required: true,
+    },
     price: {
       type: Number,
       required: true,
@@ -20,6 +24,10 @@ const productSchema = new Schema(
     quantity: {
       type: Number,
       required: true,
+    },
+    highLights: {
+      type: String,
+      trim: true,
     },
     description: {
       type: String,

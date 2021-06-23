@@ -2,6 +2,7 @@ import { productConstants } from "../actions/Constants";
 
 const initState = {
   products: [],
+  product: {},
   success: false,
 };
 
@@ -12,6 +13,13 @@ export default (state = initState, action) => {
         ...state,
         success: true,
         products: action.payload.products,
+      };
+      break;
+    case productConstants.GET_PRODUCT_BY_ID_SUCCESS:
+      state = {
+        ...state,
+        success: true,
+        product: action.payload.product,
       };
       break;
   }

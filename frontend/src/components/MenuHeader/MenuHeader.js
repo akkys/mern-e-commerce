@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./style.css";
 import { getAllCategories } from "../../actions";
 
-const MenuHeader = () => {
+const MenuHeader = (props) => {
   const category = useSelector((state) => state.category);
   const dispatch = useDispatch();
 
@@ -17,7 +17,11 @@ const MenuHeader = () => {
       categoryList.push(
         <li key={category._id}>
           {category.parentId ? (
-            <a href={category.slug}>{category.name}</a>
+            <a
+              href={`/${category.slug}?cid=${category._id}&type=${category.type}`}
+            >
+              {category.name}
+            </a>
           ) : (
             <span>{category.name}</span>
           )}
@@ -32,7 +36,7 @@ const MenuHeader = () => {
   };
 
   return (
-    <div className="menuHeader">
+    <div className="menuHeader" id="sidebar">
       <ul>
         {category.categories.length > 0
           ? renderCategories(category.categories)

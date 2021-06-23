@@ -1,0 +1,95 @@
+.container {
+  width: 100%;
+  margin: auto;
+  /* display: flex;
+  justify-content: space-between; */
+}
+
+/* copied */
+.orderTrack {
+  width: 100%;
+  display: flex;
+}
+.orderStatus {
+  width: 33.33%;
+  height: 3px;
+  background: #777;
+  position: relative;
+  font-size: 12px;
+}
+.orderStatus.active {
+  background: #26a541;
+}
+.orderStatus:last-child {
+  width: 0;
+}
+.orderStatus .point {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 5px;
+  background-color: #777;
+  top: -3px;
+}
+.orderStatus .point.active {
+  background-color: #26a541;
+}
+.orderInfo {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: -26px;
+  transform: translateX(-50%);
+  width: 60px;
+  text-align: center;
+}
+
+.orderInfo .status {
+  text-transform: capitalize;
+}
+
+/* end */
+
+.orderSelectType {
+  /* margin-top: 4%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orderDiv1 {
+  /* line-height: 13px; */
+  font-size: 14px;
+}
+
+.orderDiv2 {
+  font-size: 14px;
+}
+.orderDiv2 {
+  text-align: center;
+}
+
+.orderDiv1 label,
+.orderDiv2 label {
+  font-weight: 550;
+}
+
+@media (max-width: 768px) {
+  .orderSelectType {
+    margin: 0 0 15px 0;
+  }
+
+  .orderDiv1 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .orderDiv2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 5px;
+    font-size: 14px;
+  }
+}

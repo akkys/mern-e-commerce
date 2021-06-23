@@ -1,0 +1,42 @@
+.orderDetailsContainer {
+  margin: 7% 10%;
+}
+
+.orderDetailsSubContainer {
+  padding: 20px;
+}
+
+.orderName {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.orderAddress {
+  font-size: 14px;
+  width: 500px;
+}
+
+@media (max-width: 748px) {
+  .orderAddress {
+    width: 300px;
+  }
+  .orderDetailsContainer {
+    margin: 10%;
+  }
+}
+@media (max-width: 600px) {
+  .orderAddress {
+    width: 300px;
+  }
+  .orderDetailsContainer {
+    margin: 12%;
+  }
+}
+@media (max-width: 500px) {
+  .orderAddress {
+    width: 250px;
+  }
+  .orderDetailsContainer {
+    margin: 14%;
+  }
+}

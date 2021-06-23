@@ -1,0 +1,148 @@
+.orderMainContainer {
+  margin: 4% 17%;
+}
+
+.orderContainer {
+  margin: 1% 5%;
+  /* padding: 0 1%; */
+  display: flex;
+  justify-content: first baseline;
+  /* align-items: center; */
+  /* box-sizing: border-box; */
+  /* flex: 1; */
+}
+.orderMainContainer a {
+  text-decoration: none;
+  color: #333;
+}
+
+.orderContainer .orderImgContainer {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  text-align: center;
+  /* margin: auto; */
+  /* padding: 10px 0; */
+}
+
+.orderContainer .orderImgContainer img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.orderItemDetails {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+
+  /* flex: 1; */
+}
+
+.orderStatusList {
+  display: none;
+  justify-content: flex-end;
+}
+
+.orderStatusList:last-child {
+  display: block;
+  justify-content: flex-end;
+}
+.orderStatus li {
+  font-size: 14px;
+  text-transform: capitalize;
+  list-style-type: none;
+}
+
+.orderName {
+  font-size: 14px;
+  font-weight: normal;
+  width: 250px;
+}
+
+.orderPrice {
+  font-size: 14px;
+  justify-content: end;
+  /* font-weight: 500; */
+  /* width: 100px; */
+}
+
+@media (max-width: 1125px) {
+  .orderMainContainer {
+    margin-top: 6%;
+  }
+}
+@media (max-width: 945px) {
+  .orderMainContainer {
+    margin-top: 7%;
+  }
+}
+
+@media (max-width: 890px) {
+  .orderItemDetails {
+    flex-direction: column;
+    /* justify-content: flex-start; */
+  }
+  .orderStatusList {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 810px) {
+  .orderMainContainer {
+    margin-top: 8%;
+  }
+  .orderStatus,
+  .orderName,
+  .orderPrice {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 748px) {
+  .orderMainContainer {
+    margin-top: 9%;
+  }
+  .orderItemDetails {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 630px) {
+  .orderMainContainer {
+    margin-top: 10%;
+  }
+}
+
+@media (max-width: 550px) {
+  .orderMainContainer {
+    margin-top: 12%;
+  }
+  .orderContainer .orderImgContainer {
+    text-align: left !important;
+  }
+  .orderImgContainer img {
+    width: 120px !important;
+    height: 120px !important;
+    text-align: center;
+  }
+  .orderContainer {
+    display: flex;
+    /* flex-direction: column; */
+  }
+  .orderItemDetails {
+    flex-direction: column;
+  }
+  .orderName,
+  .orderStatus,
+  .orderPrice {
+    /* text-align: center; */
+    font-size: 13px;
+    width: auto;
+  }
+}
+@media (max-width: 450px) {
+  .orderMainContainer {
+    margin-top: 16%;
+  }
+}

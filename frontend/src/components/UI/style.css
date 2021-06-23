@@ -1,0 +1,126 @@
+.modal-header {
+  padding: 10px 15px;
+  background-color: #2874f0;
+  border-radius: 0;
+}
+
+.row {
+  height: auto !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: none !important;
+}
+
+.breadcrumb {
+  background: none !important;
+  font-size: 13px;
+  color: gray !important;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">" !important;
+}
+
+.breadcrumb > .breadcrumb-item > a {
+  color: gray;
+  text-decoration: none;
+}
+
+.breadcrumb > .breadcrumb-item > a:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.modal-content {
+  border-radius: 0;
+  /* margin: auto; */
+}
+
+.modal-title {
+  font-size: 18px;
+  color: white;
+}
+
+.form-label {
+  font-size: 14px;
+}
+
+.form-control {
+  font-size: 13px;
+  border-radius: 0;
+}
+
+.form-control:focus {
+  /* border-color: rgb(156, 154, 154); */
+  border-color: #2874f0;
+}
+
+.form-control-file {
+  font-size: 13px;
+}
+
+.modal-footer {
+  padding: 10px 15px;
+  border-radius: 1px;
+}
+
+.btn {
+  border-radius: 0px;
+  font-size: 14px;
+  /* padding: 3px 10px; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+.MuiButton-label {
+  color: #1976d2 !important;
+}
+.MuiButton-containedPrimary {
+  background-color: #1976d2 !important;
+}
+.MuiButton-outlinedPrimary {
+  color: #1976d2 !important;
+  border: 1px solid #cecece !important;
+  border-radius: 0 !important;
+  padding: 5px 25px !important;
+}
+
+#outlined-basic-label,
+#outlined-multiline-static-label {
+  font-size: 14px;
+  line-break: strict;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 0 !important;
+}
+.MuiOutlinedInput-root:focus {
+  border-color: #1976d2 !important;
+}
+.MuiOutlinedInput-notchedOutline {
+  border-color: #cecece !important;
+}
+.MuiOutlinedInput-input:focus {
+  border-color: #1976d2 !important;
+}
+
+.MuiOutlinedInput-notchedOutline:focus {
+  border-color: #1976d2 !important;
+}
+
+.MuiInputBase-input {
+  /* border: 1px solid #cecece !important; */
+  /* border-bottom: none !important; */
+  font-size: 14px !important;
+}
+
+.MuiInputBase-input,
+.MuiOutlinedInput-input:hover {
+  border-color: #1976d2 !important;
+}

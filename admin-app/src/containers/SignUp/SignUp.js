@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
@@ -16,6 +16,16 @@ const SignUp = () => {
 
   const auth = useSelector((state) => state.auth);
   const user = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (!user.loading) {
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPassword("");
+    }
+  }, [user.loading]);
+
   if (auth.authenticate) {
     return <Redirect to="/" />;
   }
@@ -78,7 +88,7 @@ const SignUp = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
 
-              <Button variant="primary" type="submit">
+              <Button variant="primary" className="shadow-none" type="submit">
                 Submit
               </Button>
             </Form>

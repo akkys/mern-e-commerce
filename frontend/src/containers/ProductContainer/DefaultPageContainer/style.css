@@ -1,0 +1,65 @@
+.defaultContainer {
+  margin: 1% 3%;
+}
+
+.defaultCard {
+  height: 400px;
+  width: 225px;
+  /* overflow-y: hidden; */
+}
+
+@media (max-width: 529px) {
+  .defaultCard {
+    width: 400px;
+  }
+  .defaultRow {
+    text-align: center;
+  }
+}
+@media (max-width: 441px) {
+  .defaultCard {
+    width: 380px;
+  }
+}
+@media (max-width: 413px) {
+  .defaultCard {
+    width: 380px;
+  }
+}
+
+.defaultImgContainer {
+  width: 200px;
+  height: 270px;
+  overflow: hidden;
+  text-align: center;
+  margin: auto;
+  padding: 10px 0;
+}
+.defaultContainer img {
+  max-width: 100% auto;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.defaultRow {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* text-align: center; */
+}
+
+.defaultBrand {
+  font-size: 14px;
+  color: #878787;
+}
+
+.defaultName {
+  font-size: 14px;
+  font-weight: 400;
+  /* width: 50%; */
+}
+
+.defaultPrice {
+  font-size: 16px;
+  font-weight: 500;
+}

@@ -5,22 +5,25 @@ const path = require("path");
 const {
   createCategory,
   getCategories,
+  updateCategories,
+  deleteCategories,
 } = require("../controllers/CategoryController");
 const {
   Auth,
+  upload,
   adminMiddleware,
-} = require("../controllers/middleware/AuthMiddleware");
+} = require("../middleware/AuthMiddleware");
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, path.join(path.dirname(__dirname), "uploads"));
-  },
-  filename: function (req, file, cb) {
-    cb(null, shortid.generate() + "-" + file.originalname);
-  },
-});
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, path.join(path.dirname(__dirname), "uploads"));
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, shortid.generate() + "-" + file.originalname);
+//   },
+// });
 
-const upload = multer({ storage });
+// const upload = multer({ storage });
 
 router.post(
   "/category/create",
@@ -29,7 +32,13 @@ router.post(
   upload.single("categoryImage"),
   createCategory
 );
-
+router.post(
+  "/category/update",
+  upload.array("categoryImage"),
+  updateCategories
+);
 router.get("/category/get", getCategories);
+
+router.post("/category/delete", deleteCategories);
 
 module.exports = router;

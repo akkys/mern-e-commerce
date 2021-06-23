@@ -1,10 +1,15 @@
 import React from "react";
-import { Nav, Navbar, Container } from "react-bootstrap";
+import "./style.css";
+import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { signout } from "../../actions/AuthAction";
+import { IoMdMenu } from "react-icons/io";
+import flipkartLogo from "../../images/logo/flipkart.png";
+import goldenStar from "../../images/logo/golden-star.png";
 
-export const Header = () => {
+export const Header = (props) => {
+  const { openNav, menuIcon } = props;
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
@@ -15,11 +20,29 @@ export const Header = () => {
   const loggedInLinks = () => {
     return (
       <Nav>
-        {/* <Nav.Link as={Link} to="/signin">
-        Sign-In
-      </Nav.Link> */}
         <Nav.Link>
-          <span onClick={logout}>Sign-out</span>
+          <p
+            className="mr-2"
+            // disabled
+            style={{
+              color: "#fff",
+              border: "none",
+              fontWeight: "500",
+              width: "100%",
+              paddingTop: "5px",
+            }}
+          >
+            Signed in as : {auth.user.firstName}
+          </p>
+        </Nav.Link>
+        <Nav.Link>
+          <button
+            className="btn btn-outline-light btn-sm shadow-none"
+            onClick={logout}
+            style={{ width: "100%" }}
+          >
+            Sign-out
+          </button>
         </Nav.Link>
       </Nav>
     );
@@ -29,10 +52,12 @@ export const Header = () => {
     return (
       <Nav>
         <Nav.Link as={Link} to="/signin">
-          Sign-In
+          <button className="btn btn-light btn-sm shadow-none">Sign-In</button>
         </Nav.Link>
         <Nav.Link as={Link} to="/signup">
-          Sign-Up
+          <button className="btn btn-warning btn-sm shadow-none">
+            Sign-Up
+          </button>
         </Nav.Link>
       </Nav>
     );
@@ -43,14 +68,33 @@ export const Header = () => {
       collapseOnSelect
       expand="lg"
       fixed="top"
-      bg="dark"
+      bg="primary"
       variant="dark"
       style={{ zIndex: 1 }}
     >
       <Container fluid>
-        <Navbar.Brand as={Link} to="/">
-          Admin Dashboard
+        <IoMdMenu
+          size="30px"
+          color="#eee"
+          fontWeight="bold"
+          onClick={openNav}
+        />
+
+        <Navbar.Brand as={Link} to="/" className="ml-2">
+          <div className="logo">
+            <a href="">
+              <img src={flipkartLogo} className="logoimage" alt="" />
+            </a>
+            <a style={{ marginTop: "-10px" }}>
+              <span className="exploreText">Explore</span>
+              <span className="plusText">Plus</span>
+              <img src={goldenStar} className="goldenStar" alt="" />
+            </a>
+          </div>
         </Navbar.Brand>
+        <h5 className="text-light ml-3" style={{ fontWeight: "bold" }}>
+          Admin Dashboard
+        </h5>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">

@@ -1,0 +1,14 @@
+.btn {
+  border-radius: 0px;
+  font-size: 14px;
+  /* padding: 3px 10px; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 485px) {
+  .productDetails .row {
+    display: block;
+  }
+}

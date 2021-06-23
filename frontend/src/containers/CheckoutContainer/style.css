@@ -1,0 +1,107 @@
+.checkoutContainer,
+.col,
+.col-md-4 {
+  width: 100% !important;
+}
+
+.checkoutContainer .row {
+  margin: 0 4%;
+}
+
+/* .checkoutContainer,
+.col,
+.col-md-3 {
+  width: auto !important;
+} */
+
+.checkoutStep {
+  width: 100%;
+  margin: 10px 0;
+  padding: 5px 0 10px 0;
+  border-radius: 0;
+  /* border: 1px solid #cecece; */
+  box-shadow: 0px 1px 6px 0px #cecece;
+}
+
+.checkoutHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: #878787;
+}
+
+.activeTab {
+  background-color: #2874f0;
+  color: #fff !important;
+}
+
+.checkoutHeader h5 {
+  font-size: 16px;
+  /* color: #878787; */
+  padding-top: 10px;
+}
+
+.addressContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 1% 4%;
+}
+
+.selectedAddress {
+  margin: 0% 6%;
+  /* padding: 10px 0; */
+}
+
+.paymentContainer {
+  margin: 1% 5%;
+  padding: 1%;
+}
+
+.form-check-input {
+  vertical-align: top;
+}
+.form-check-inline {
+  align-items: baseline;
+  /* padding-top: 10px; */
+}
+
+.addressName,
+.addressMobile {
+  margin: 0 10px 0 5px;
+  font-weight: 500;
+}
+.addressLeft {
+  width: 100% !important;
+}
+.addressType {
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #878787;
+  vertical-align: middle;
+  padding: 4px 7px;
+  border-radius: 2px;
+  background-color: #f0f0f0;
+  font-weight: 500;
+}
+
+.checkCount {
+  font-size: 13px;
+  color: #2874f0;
+  background-color: #f0f0f0;
+  border-radius: 2px;
+  padding: 3px 7px;
+  vertical-align: baseline;
+  margin-right: 17px;
+  font-weight: 600;
+}
+.confirmMail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin: 10px; */
+  padding: 0 15px;
+}
+
+.confirmText {
+  font-size: 14px;
+}

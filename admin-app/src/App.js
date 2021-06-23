@@ -10,6 +10,7 @@ import ProductPage from "./containers/Products/ProductPage";
 import OrderPage from "./containers/Orders/OrderPage";
 import CategoryPage from "./containers/Category/CategoryPage";
 import { getInitialData, isUserLoggedIn } from "./actions";
+import Page from "./containers/Page/Page";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,12 +21,15 @@ function App() {
     if (!auth.authenticate) {
       dispatch(isUserLoggedIn());
     }
-    dispatch(getInitialData());
+    if (auth.authenticate) {
+      dispatch(getInitialData());
+    }
   }, [auth.authenticate, dispatch]);
   return (
     <div className="App">
       <Switch>
         <PrivateRoute exact path="/" component={Home} />
+        <PrivateRoute path="/page" component={Page} />
         <PrivateRoute path="/products" component={ProductPage} />
         <PrivateRoute path="/orders" component={OrderPage} />
         <PrivateRoute path="/category" component={CategoryPage} />

@@ -1,38 +1,97 @@
 .sidebar {
+  height: 100%;
+  width: 0;
   position: fixed;
-  top: 0;
+  z-index: 1;
+  /* top: 13%; */
   bottom: 0;
   left: 0;
-  background-color: #eee;
+  /* background-color: #007bff; */
+  background-color: #cecece;
+  border-right: 1px solid #cecece;
+  overflow-x: hidden;
+  transition: 0.5s;
+  /* padding-top: 55px; */
   padding: 0;
-  padding-top: 60px;
-  box-shadow: inset 0 0 2px gray;
-}
-
-.sidebar a {
-  display: block;
 }
 
 .sidebar ul {
-  margin: 0;
-  padding: 0;
+  padding: 5px;
+}
+.sidebar ul li a {
+  display: block;
+  /* color: #fff; */
+  color: #333;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  margin: 5px 5px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .sidebar ul li {
   list-style: none;
 }
 
-.sidebar ul li a {
-  display: block;
-  color: #333;
-  padding: 5px 10px;
-  box-sizing: border-box;
-  margin: 5px 0 5px 10px;
-  border-radius: 5px 0 0 5px;
-  text-decoration: none;
+.sidebar ul > li > div > span {
+  font-size: 15px;
+  margin-top: 0px;
+  float: left;
 }
 
 .sidebar ul li a.active {
   background: #333;
   color: #fff;
+  border-radius: 3px 0px 0px 3px;
+}
+
+.sidebar a:hover {
+  color: #333;
+  /* background: rgb(255, 255, 255); */
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px 0px 0px 3px;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  right: 10px;
+  font-size: 35px;
+  color: #333;
+  cursor: pointer;
+}
+
+.logo {
+  width: 90px;
+  /* margin-top: 10px; */
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.logo .logoimage {
+  width: 70px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+    max-width: 350px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-height: 1125px) {
+  .sidebar {
+    padding-top: 10px;
+    max-width: 350px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
 }

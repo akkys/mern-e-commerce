@@ -38,3 +38,39 @@ export const addCategory = (form) => {
     }
   };
 };
+
+export const updateCategories = (form) => {
+  return async (dispatch) => {
+    dispatch({ type: categoryConstants.UPDATE_CATEGORY_REQUEST });
+    const res = await axiosInstance.post("/category/update", form);
+    if (res.status === 201) {
+      dispatch({ type: categoryConstants.UPDATE_CATEGORY_SUCCESS });
+      dispatch(getAllCategories());
+    } else {
+      const { error } = res.data;
+      dispatch({
+        type: categoryConstants.UPDATE_CATEGORY_FAILURE,
+        payload: { error },
+      });
+    }
+  };
+};
+
+export const deleteCategories = (ids) => {
+  return async (dispatch) => {
+    dispatch({ type: categoryConstants.DELETE_CATEGORY_REQUEST });
+    const res = await axiosInstance.post("/category/delete", {
+      payload: { ids },
+    });
+    if (res.status == 201) {
+      dispatch(getAllCategories());
+      dispatch({ type: categoryConstants.DELETE_CATEGORY_SUCCESS });
+    } else {
+      const { error } = res.data;
+      dispatch({
+        type: categoryConstants.DELETE_CATEGORY_FAILURE,
+        payload: { error },
+      });
+    }
+  };
+};
